@@ -6,21 +6,12 @@ import { addToDb, getStoredCart } from '../../utilities/fakedb'
 import Product from '../product/Product';
 import './Shop.css';
 import { Link } from 'react-router-dom';
+import useProducts from '../../Hooks/useProducts';
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
-    const [displayProducts, setdisplayProducts] = useState([])
+    const { products, setProducts, displayProducts, setdisplayProducts } = useProducts()
     const [cart, setCart] = useState([])
-
     const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
-    useEffect(() => {
-        fetch('./products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-                setdisplayProducts(data)
-            })
-    }, [])
 
     function addSummary(newProps) {
         const exist = cart.find(pdt => pdt.key === newProps.key)
@@ -57,7 +48,7 @@ const Shop = () => {
         const machedProducts = products.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()));
         setdisplayProducts(machedProducts);
     }
-
+    console.log(displayProducts)
     return (
         <div className="shop">
             <div className="search-input">
@@ -72,11 +63,12 @@ const Shop = () => {
             <div className="shop-container">
                 <div className="products-div">
                     {
-                        products.length === 0 ? <h1>Loading...</h1> : displayProducts.map(product => <Product
-                            key={product.key}
-                            product={product}
-                            function={addSummary}
-                        />)
+                        products.length === 0 ? <h1>Loading...</h1> : displayProducts.map(product =>
+                            <Product
+                                key={product._id}
+                                product={product}
+                                function={addSummary}
+                            />)
                     }
 
                 </div>
@@ -91,7 +83,5 @@ const Shop = () => {
         </div >
     );
 };
-
-
 
 export default Shop;

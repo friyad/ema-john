@@ -7,7 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 const Header = () => {
     const { user, handleSignOut } = useAuth()
 
-    const activeStyle = {
+    const activeStyles = {
         backgroundColor: 'white',
         color: 'black'
     }
@@ -18,14 +18,14 @@ const Header = () => {
 
             <div className="search-div">
                 <nav className="navigation">
-                    <NavLink activeStyle={activeStyle} to="/shop">Shop</NavLink>
-                    <NavLink activeStyle={activeStyle} to="/orderPreview">Order Preview</NavLink>
-                    <NavLink activeStyle={activeStyle} to="/shipping">Shipping</NavLink>
-                    <NavLink activeStyle={activeStyle} to="/inventory">Manage Inventory</NavLink>
+                    <NavLink activestyle={activeStyles} to="/shop">Shop</NavLink>
+                    <NavLink activestyle={activeStyles} to="/orderPreview">Order Preview</NavLink>
+                    <NavLink activestyle={activeStyles} to="/shipping">Shipping</NavLink>
+                    <NavLink activestyle={activeStyles} to="/inventory">Manage Inventory</NavLink>
                     {
                         user.email
-                            ? <a onClick={handleSignOut} activeStyle={activeStyle}>Log Out</a>
-                            : <NavLink activeStyle={activeStyle} to="/login">Log In</NavLink>
+                            ? <a onClick={handleSignOut} activestyle={activeStyles}>Log Out</a>
+                            : <NavLink activestyle={activeStyles} to="/login">Log In</NavLink>
                     }
 
 

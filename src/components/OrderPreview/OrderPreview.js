@@ -8,7 +8,7 @@ import './OrderReview.css'
 import useAuth from '../../Hooks/useAuth';
 
 const OrderPreview = () => {
-    const [products, setProducts] = useProducts();
+    const { products, setProducts } = useProducts();
     const [cart, setCart] = useCart(products);
     const { user } = useAuth()
 
@@ -30,6 +30,7 @@ const OrderPreview = () => {
                 {
                     cart.length === 0 ? <h2>Your ordered 0 items. Please Add something on your cart...</h2> :
                         cart.map(crt => <ReviewProducts
+                            key={crt._id}
                             handleRemove={handleRemove}
                             crt={crt}
                         />)

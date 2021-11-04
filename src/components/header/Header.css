@@ -1,0 +1,39 @@
+.Header{
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+        z-index:1;
+}
+
+.search-div{
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+    position: sticky;
+    top: 0px;
+}
+
+.navigation{
+    position: sticky;
+    top: 0px;
+    text-align: left;
+    background-color: black;
+    padding-left: 50px;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 25px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navigation a:hover{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.884);
+
+}

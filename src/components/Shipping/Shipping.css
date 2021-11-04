@@ -1,0 +1,46 @@
+
+.shipping-container{
+    padding-top: 13rem;
+    text-align: center;
+}
+
+.shipping-form{
+    width: 25%;
+    margin: auto;
+    background-color: black;
+    padding: 25px 20px 40px 20px;
+    color: white;
+    border-radius: 10px;
+}
+.shipping-form h1{
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.shipping-form p{
+    padding-left: 35px;
+    width: 80%;
+    text-align: left;
+ margin: 5px 0px 0px 0px;
+ font-size: medium;
+}
+
+.shipping-input{
+    font-size: medium;
+    padding: 8px;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.error{
+    color: red;
+}
+
+.submit-btn{
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: medium;
+    background-color: rgb(255, 187, 0);
+    border-radius: 10px;
+}
